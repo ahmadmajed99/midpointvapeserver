@@ -7,7 +7,7 @@ const contactUs = asyncHandler(async (req, res) => {
 
   try {
     const transporter = nodemailer.createTransport({
-      host: "smtp.office365.com",
+      host: "smtp.hostinger.com",
       port: 587,
       secure: false,
       auth: {
@@ -17,12 +17,13 @@ const contactUs = asyncHandler(async (req, res) => {
     });
 
     const mailOptions = {
-      from: "info@midpointvape.com",
-      to: "info@midpointvape.com",
+      from: "info@midpointvape.co",
+      to: "info@midpointvape.co",
       subject: "Contact Form Submission MidPointVape",
       text: `Name: ${fullName}\nPhone: ${phoneNumber}\nEmail: ${email}\nMessage: ${message}`,
     };
-    transporter.sendMail(mailOptions, function (error, info) {
+
+    transporter.sendMail(mailOptions, async function (error, info) {
       if (error) {
         console.log(error);
       } else {

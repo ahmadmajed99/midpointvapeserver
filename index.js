@@ -16,20 +16,12 @@ const PORT = process.env.PORT;
 
 const app = new express();
 app.use(cors());
-app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.urlencoded({ extended: false }));
 // app.use(express.static(path.resolve(__dirname, "../build")));
 // parse application/json
 app.use(bodyParser.json());
 
 app.use("/api", contactUsRoute);
-
-app.get("/", (req, res) => {
-  res.send("API is running ...");
-});
-
-app.get("/home", (req, res) => {
-  res.send("Hello World!");
-});
 
 // app.get("*", (req, res) => {
 //   res.sendFile(path.resolve(__dirname, "../build", "index.html"));
