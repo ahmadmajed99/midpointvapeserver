@@ -7,12 +7,15 @@ const contactUs = asyncHandler(async (req, res) => {
 
   try {
     const transporter = nodemailer.createTransport({
-      host: "smtp.hostinger.com",
+      host: "smtp.ethereal.email",
       port: 587,
       secure: false,
       auth: {
         user: process.env.MAIL,
         pass: process.env.PASS,
+      },
+      tls: {
+        rejectUnauthorized: false,
       },
     });
 
