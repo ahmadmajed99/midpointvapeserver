@@ -11,8 +11,8 @@ const contactUs = asyncHandler(async (req, res) => {
       port: 587,
       secure: false,
       auth: {
-        user: process.env.MAIL,
-        pass: process.env.PASS,
+        user: "info@midpointvape.co",
+        pass: "Midpoint-Vape-123",
       },
       tls: {
         rejectUnauthorized: false,
