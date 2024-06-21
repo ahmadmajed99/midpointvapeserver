@@ -15,7 +15,13 @@ dotenv.config();
 const PORT = process.env.PORT;
 
 const app = new express();
-app.use(cors());
+
+const corsOptions = {
+  origin: "https://midpointvape.co",
+  optionsSuccessStatus: 200,
+};
+
+app.use(cors(corsOptions));
 app.use(bodyParser.urlencoded({ extended: false }));
 // app.use(express.static(path.resolve(__dirname, "../build")));
 // parse application/json
