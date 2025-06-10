@@ -8,10 +8,10 @@ const contactUs = asyncHandler(async (req, res) => {
   try {
     const transporter = nodemailer.createTransport({
       host: "smtp.hostinger.com",
-      port: 587,
+      port: 465,
       secure: false,
       auth: {
-        user: "info@midpointvape.co",
+        user: "info@sparkmidpoint.com",
         pass: "Midpoint-Vape-123",
       },
       tls: {
@@ -28,9 +28,9 @@ const contactUs = asyncHandler(async (req, res) => {
     });
 
     const mailOptions = {
-      from: "info@midpointvape.co",
-      to: "info@midpointvape.co",
-      subject: "Contact Form Submission MidPointVape",
+      from: "info@sparkmidpoint.com",
+      to: "info@sparkmidpoint.com",
+      subject: "Contact Form Submission SparkMidpoint",
       text: `Name: ${fullName}\nPhone: ${phoneNumber}\nEmail: ${email}\nMessage: ${message}`,
     };
 

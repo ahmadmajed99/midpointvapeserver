@@ -17,7 +17,7 @@ const PORT = process.env.PORT;
 const app = new express();
 
 const corsOptions = {
-  origin: "https://midpointvape.co",
+  origin: "https://sparkmidpoint.com",
   optionsSuccessStatus: 200,
 };
 
